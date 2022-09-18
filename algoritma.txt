@@ -1,0 +1,12 @@
+#ALGORITMA KASIR
+
+1. Mulai
+2. Selama ada barang:
+    a. Memasukkan kode dan banyaknya barang
+    b. Menjumlahkan harga barang
+3. Menampilkan total pembayaran
+4. Memasukkan nominal uang:
+    a. Jika nominal > total maka menghitung kembalian = nominal - total
+    b. Jika nominal < total maka memasukkan nominal uang lagi
+5. Menampilkan dan mencetak setruk pembayaran
+6. Selesai

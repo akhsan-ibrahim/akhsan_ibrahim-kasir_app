@@ -1,0 +1,37 @@
+#PSEUDOCODE KASIR:
+
+STORE "daftar_harga" AS record WITH "barang" (key) & "harga" (value)
+STORE "total" AS number WITH 0
+
+PROCEDURE pembelian(barang,banyaknya)
+    IF "barang" EQUALS key of "daftar_harga"
+        STORE "harga" with daftar_harga[barang]
+    END IF
+    STORE "harga" with CALCULATE "harga" times "banyaknya"
+    STORE "total" with CALCULATE "total" plus "harga"
+    CALL beli_lain(jawab)
+END PROCEDURE
+
+PROCEDURE beli_lain(jawab)
+    IF jawab EQUALS "ya"
+        CALL pembelian(barang,banyaknya)
+    IF ELSE jawab EQUALS "tidak"
+        CALL pembayaran(nominal)
+    END IF
+END PROCEDURE
+
+READ AND WRITE "kembalian" with number
+
+PROCEDURE pembayaran(nominal)
+    IF "nominal" LOWER THAN "total":
+        PRINT "masukkan nominal uang yang cukup"
+        CALL pembayaran(nominal)
+    ELSE:
+        STORE "kembalian" with CALCULATE "nominal" minus "harga"
+    END IF
+END PROCEDURE
+
+CALL pembelian(barang,banyaknya)
+DISPLAY "total"
+DISPLAY "nominal"
+DISPLAY "kembalian"
